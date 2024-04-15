@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Risk Questionnaire</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+
+  
+
+    <!-- The action attribute points to the /submit route on your Flask server -->
+    <form id="riskQuestionnaire" method="POST" action="/submit">
+        <h2>Investment Risk Questionnaire</h2>
+        
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <!-- Investment Goals -->
+        <label for="Investment Goals">What is the primary/main purpose of your investment?</label>
+        <select name="InvestmentGoals" id="investmentGoals">
+            <option value="1">Saving for retirement</option>
+            <option value="2">Buying a property/car in the next 5-10 years</option>
+            <option value="3">Generating short-term income</option>
+            <option value="4">Speculative gains</option>
+        </select>
+
+        <!-- Investment Time -->
+        <label for="Investment Time">When do you plan on using the funds you have invested?</label>
+        <select name="InvestmentTime" id="investmentTime">
+            <option value="4">Less than 1 year</option>
+            <option value="3">1-3 years</option>
+            <option value="2">3-5 years</option>
+            <option value="1">More than 5 years</option>
+        </select>
+
+        <!-- Risk Tolerance -->
+        <label for="Risk Tolerance">How would you react to a significant drop in the value of your investment portfolio over a short period?</label>
+        <select name="RiskTolerance" id="riskTolerance">
+            <option value="1">Sell all investments to avoid further losses</option>
+            <option value="2">Sell some investments to minimize losses</option>
+            <option value="3">Keep all investments and wait for the market to recover</option>
+            <option value="4">Invest more to lower the average cost</option>
+        </select>
+
+        <!-- Investment Experience -->
+        <label for="InvestmentExperience">How would you describe your experience with investing?</label>
+        <select name="InvestmentExperience" id="InvestmentExperience">
+            <option value="1">Beginner (Need guidance and prefer low risk)</option>
+            <option value="2">Some experience (Comfortable with medium risk)</option>
+            <option value="3">Experienced (Open to higher risk for higher returns)</option>
+            <option value="4">Expert (Willing to take substantial risks for high returns)</option>
+        </select>
+        
+        <!-- Asset Allocation -->
+        <label for="assetAllocation">Which portfolio allocation would you be most comfortable with?</label>
+        <select name="Asset Allocation" id="assetAllocation">
+            <option value="1">Mostly bonds and stable investments</option>
+            <option value="2">A mix of stocks and bonds</option>
+            <option value="3">Mostly stocks and high-growth investments</option>
+            <option value="4">Speculative investments (cryptocurrencies, startups, etc.)</option>
+        </select>
+
+        <!-- Liquidity Preference -->
+        <label for="liquidityPreference">How important is it for you to have immediate access to your investments without facing significant penalties or losses?</label>
+        <select name="LiquidityPreference" id="liquidityPreference">
+            <option value="1">Very important. I need to have immediate access</option>
+            <option value="2">Important. I would rather have immediate access</option>
+            <option value="3">Somewhat important. I can wait a bit if needed</option>
+            <option value="4">Not very important. I'm okay with locking in funds for higher returns</option>
+        </select>
+        
+        <!-- Income Stability -->
+        <label for="incomeStability">How stable is your current source of income?</label>
+        <select name="IncomeStability" id="incomeStability">
+            <option value="1">Very stable. My income is consistent and reliable</option>
+            <option value="2">Moderately stable. My income varies somewhat but is generally predictable</option>
+            <option value="3">Not very stable. My income is stable parts of the year but sometimes unstable</option>
+            <option value="4">Unstable. My income is highly variable or uncertain</option>
+        </select>
+
+        <!-- Financial Safety Net -->
+        <label for="financialSafetyNet">Do you have an emergency fund or savings set aside outside of your investments?</label>
+        <select name="FinancialSafetyNet" id="financialSafetyNet">
+            <option value="1">Yes, I have more than 6 months of expenses saved</option>
+            <option value="2">Yes, I have 3-6 months of expenses saved</option>
+            <option value="3">No, I have less than 3 months of expenses saved or none at all</option>
+            <option value="4">No, I am in debt</option>
+        </select>
+
+        <!-- Investment Purpose -->
+        <label for="investmentPurpose">Besides the primary goal, are there other purposes for your investment? (Select all that apply)</label>
+        <select name="InvestmentPurpose" id="investmentPurpose">
+            <option value="1">Building wealth over the long term</option>
+            <option value="2">Funding a specific upcoming expense</option>
+            <option value="3">Experimenting with new investment strategies</option>
+            <option value="4">Diversifying assets and reducing overall risk</option>
+        </select>
+
+        <!-- Market Volatility Reaction -->
+        <label for="marketVolatilityReaction">In times of market volatility, how likely are you to make significant changes to your investment portfolio?</label>
+        <select name="MarketVolatilityReaction" id="marketVolatilityReaction">
+            <option value="1">Very likely. I tend to react quickly to market changes</option>
+            <option value="2">Somewhat likely. I might make some changes if the situation seems severe</option>
+            <option value="3">Not likely but I might react if severe changes last a while</option>
+            <option value="4">Unlikely. I prefer to stick to my long-term investment plan</option>
+        </select>
+       
+        <!-- Financial Goals -->
+        <label for="financialGoals">Which of the following financial goals is most important to you right now?</label>
+        <select name="FinancialGoals" id="financialGoals">
+            <option value="1">Protecting my initial investment</option>
+            <option value="2">Funding a specific goal without taking much risk </option>
+            <option value="3">Achieving steady income from investments</option>
+            <option value="4">Maximizing returns regardless of risk</option>
+        </select>
+
+        <!-- Learning and Guidance -->
+        <label for="learningGuidance">How much do you value educational resources and guidance in making investment decisions?</label>
+        <select name="LearningandGuidance" id="learningGuidance">
+            <option value="1">Very much. I prefer detailed guidance and resources</option>
+            <option value="2">Somewhat. I appreciate some guidance but also like to rely on my own research </option>
+            <option value="3">I appreciate guidance in some areas but am well versed in other parts</option>
+            <option value="4">Not much. I prefer to make decisions based on my own research and understanding</option>
+        </select>
+        
+        <!-- Submit button -->
+        <input type="submit" value="Calculate Risk Level">
+    </form>
+
+    <div id="result"></div>
+
+    <!-- Removed the script reference since calculation is now server-side -->
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Level Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="result-container">
+        <h2>Your Investment Risk Level</h2>
+        
+        <!-- Displaying the total risk score -->
+        <p>Your total risk score is: <strong>{{ score }}</strong></p>
+        
+        <!-- Displaying the risk level based on the score -->
+        <p>Based on your score, your risk level is: <strong>{{ risk_level }}</strong></p>
+        
+        <a href="/">Take the questionnaire again</a>
+    </div>
+</body>
+</html>
